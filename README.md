@@ -53,9 +53,9 @@ Gap médio (%) em 10 execuções:
 | ch150 | 150 | 12.14 | 2.45 | 9.87 | 0.26 | 13.40 | 9.55 | 0.00 |
 | kroA200 | 200 | 11.56 | 1.70 | 8.93 | 0.34 | 10.26 | 19.92 | 0.00 |
 
-![Gap médio por instância](grafico_gap.png)
+   ![Gap médio por instância](tsp_pibic/grafico_gap.png)
 
-![Rotas na kroA100](rotas_kroA100.png)
+   ![Rotas na kroA100](tsp_pibic/rotas_kroA100.png)
 
 ## Principais observações
 
