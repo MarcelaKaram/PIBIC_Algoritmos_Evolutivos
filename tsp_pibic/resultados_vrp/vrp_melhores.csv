@@ -1,0 +1,5 @@
+metodo,metrica,param,k,silhueta,silhueta_hav,km_total,km_max_rota,km_min_rota,tam_min,tam_max,t_agrup,t_rota
+K-means,euclidiana,2,2,0.5677,0.5418,4883.3289,3288.8538,1594.4751,21,99,0.0154,0.0043
+Aglomerativo,euclidiana,2,2,0.5702,0.5445,5006.6720,3456.1626,1550.5093,20,100,0.0167,0.0034
+Aglomerativo,haversine,6,6,0.5570,0.5570,6360.9776,1322.0986,804.2439,2,35,0.0005,0.0034
+DBSCAN,haversine,eps=54.9km,5,0.5483,0.5483,5789.6552,1550.5093,854.7842,18,36,0.0012,0.0032

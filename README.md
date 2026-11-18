@@ -64,3 +64,21 @@ Gap médio (%) em 10 execuções:
 - O **AG puro** é melhor que o 2-opt, mas fica bem atrás da versão híbrida, o que mostra o ganho de combinar busca global com busca local.
 - O **LKH** encontrou o ótimo em todas as execuções e serve de referência.
 - Graças ao numba, o 2-opt e o LK próprios rodam em menos de 1 ms, enquanto as versões do python-tsp levam até alguns segundos.
+
+## Roteamento com vários veículos (VRP)
+
+Extensão para vários veículos saindo de um único depósito: agrupa os clientes, escolhe o número de veículos pela silhueta e resolve um TSP por grupo com o LK + 2-opt do `tsp.py`.
+
+- `vrp.py`: K-means, aglomerativo (euclidiana e Haversine) e DBSCAN Haversine; o custo das rotas é sempre medido em km.
+- `ag_agrupamento.py`: algoritmo evolutivo que escolhe k medoides usando a silhueta Haversine como aptidão.
+
+```
+pip install scikit-learn
+python vrp.py
+python ag_agrupamento.py
+```
+
+![Rotas por método](tsp_pibic/resultados_vrp/vrp_rotas.png)
+
+- Silhueta mais alta não significa rotas mais curtas: o AG lidera na silhueta, mas o K-means fez a menor distância total na maioria dos k.
+- Sem restrição de capacidade, cada veículo a mais aumenta a distância total.
