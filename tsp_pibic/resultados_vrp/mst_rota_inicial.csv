@@ -1,0 +1,13 @@
+grupo,n,inicio,km_inicial,km_final,caso
+0,121,vizinho mais proximo,5614.08,4583.54,k=1
+0,121,arvore (MST),5916.04,4645.74,k=1
+0,19,vizinho mais proximo,921.09,854.78,K-means k=6
+0,19,arvore (MST),893.68,812.82,K-means k=6
+1,19,vizinho mais proximo,1423.81,1169.75,K-means k=6
+1,19,arvore (MST),1372.58,1169.75,K-means k=6
+2,23,vizinho mais proximo,1399.33,1012.24,K-means k=6
+2,23,arvore (MST),1259.05,1012.24,K-means k=6
+3,35,vizinho mais proximo,1640.38,1299.48,K-means k=6
+3,35,arvore (MST),1500.86,1299.48,K-means k=6
+4,27,vizinho mais proximo,1227.44,1008.16,K-means k=6
+4,27,arvore (MST),1240.83,1034.84,K-means k=6

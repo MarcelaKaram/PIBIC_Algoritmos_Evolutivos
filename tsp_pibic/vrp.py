@@ -95,18 +95,23 @@ def silhueta(D, lab):
     return silhouette_score(D, lab, metric='precomputed')
 
 
-def tsp_grupo(D):
-    # no 0 = deposito. vizinho mais proximo, depois LK e 2-opt
-    n = len(D)
-    if n <= 3:
-        return np.arange(n)
+def vizinho_mais_proximo(D):
     r = [0]
-    livre = set(range(1, n))
+    livre = set(range(1, len(D)))
     while livre:
         j = min(livre, key=lambda v: D[r[-1], v])
         r.append(j)
         livre.remove(j)
-    r = np.array(r, np.int64)
+    return np.array(r, np.int64)
+
+
+def tsp_grupo(D, r=None):
+    # no 0 = deposito. rota inicial (vizinho mais proximo se nao vier outra), depois LK e 2-opt
+    n = len(D)
+    if n <= 3:
+        return np.arange(n)
+    if r is None:
+        r = vizinho_mais_proximo(D)
     r = two_opt(lin_kernighan(r, D, vizinhos(D, min(10, n - 1))), D)
     return np.roll(r, -int(np.where(r == 0)[0][0]))
 

@@ -71,14 +71,19 @@ Extensão para vários veículos saindo de um único depósito: agrupa os client
 
 - `vrp.py`: K-means, aglomerativo (euclidiana e Haversine) e DBSCAN Haversine; o custo das rotas é sempre medido em km.
 - `ag_agrupamento.py`: algoritmo evolutivo que escolhe k medoides usando a silhueta Haversine como aptidão.
+- `mst_mis.py`: agrupamento cortando a árvore geradora mínima, árvore como rota inicial e `maximum_independent_set` como sementes.
+- `metricas.py`: compara métricas de avaliação do agrupamento com o km real das rotas, incluindo uma métrica nova (`custo_mst`).
 
 ```
 pip install scikit-learn
 python vrp.py
 python ag_agrupamento.py
+python mst_mis.py
+python metricas.py
 ```
 
 ![Rotas por método](tsp_pibic/resultados_vrp/vrp_rotas.png)
 
 - Silhueta mais alta não significa rotas mais curtas: o AG lidera na silhueta, mas o K-means fez a menor distância total na maioria dos k.
 - Sem restrição de capacidade, cada veículo a mais aumenta a distância total.
+- A métrica proposta `custo_mst` (soma das árvores geradoras mínimas de cada grupo com o depósito) acompanha o km real das rotas (Spearman 0,99), enquanto a silhueta quase não acompanha (0,07).

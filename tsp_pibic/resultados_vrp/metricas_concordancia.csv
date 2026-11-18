@@ -1,0 +1,6 @@
+metrica,concordancia_geral,concordancia_mesmo_k,acertos_melhor_metodo,tempo_s
+silhueta,0.0690,0.1100,1/9,0.0667
+davies_bouldin,-0.1748,-0.2692,0/9,0.1814
+calinski_harabasz,-0.4243,0.7176,3/9,0.0363
+custo_mst,0.9929,0.9308,6/9,0.2853
+rotas (TSP),,,,0.2864
